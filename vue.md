@@ -1,4 +1,4 @@
-1. npm install vue-cli -g  *安装脚手架*  
+1. `npm install vue-cli -g`  *安装脚手架*  
 2. vue init webpack vue_test  *初始化项目*  
 3. npm install iview --save  *安装iview*  
    在main.js中
