@@ -2,7 +2,9 @@
 2. vue init webpack vue_test  初始化项目  
 3. npm install iview --save  安装iview  
 4. 在main.js中
-import iView from 'iview'
-import 'iview/dist/styles/iview_own.css'
-5. Vue.use(iView)
+import iView from 'iview'  
+import 'iview/dist/styles/iview_own.css'  
+Vue.use(iView)  
+5. 将自定义的css文件，放入**static**目录下，然后在index.html中引入  
+<link rel="stylesheet"  href="../static/stylesheet/common.css"></link>  
 6. npm run dev  运行开发服务器
