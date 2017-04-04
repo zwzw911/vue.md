@@ -2,9 +2,9 @@
 2. `vue init webpack vue_test`  *初始化项目*  
 3. `npm install iview --save`  *安装iview*  
    在main.js中
-   `import iView from 'iview'  
-   import 'iview/dist/styles/iview_own.css'  
-   Vue.use(iView)`  
+   `import iView from 'iview'    
+   import 'iview/dist/styles/iview_own.css'    
+   Vue.use(iView)`    
 4. `npm install vuex --save`    *安装vuex*  
    新建文件mainState.js，在其中定义state/mutations/getter/actions  
    在main.js中执行  
