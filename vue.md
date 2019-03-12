@@ -20,21 +20,25 @@
 6. 将自定义的css文件，放入**static**目录下，然后在index.html中引入  
 `<link rel="stylesheet"  href="../static/stylesheet/common.css"></link>`  
 7. 修改config/index.js，添加一个函数，用来自动生成测试路由  
-`function generateProxyTable({baseUrl}){
-  let result={}
-  let target='http://127.0.0.1:3000' //发出的请求路由到那个路径
-  let changeOrigin=true   //修改原始url
-  for(let singleEle of baseUrl){
-    result[singleEle]={
-      target:target,
-      changeOrigin:changeOrigin,
-      pathRewrite:{
-        [`^${singleEle}`]:`${singleEle}`
-      }
-    }
-  }
-
-  return result
-}`
-7. `npm run dev`  *运行开发服务器*  
+`function generateProxyTable({baseUrl}){  
+  let result={}  
+  let target='http://127.0.0.1:3000' //发出的请求路由到那个路径  
+  let changeOrigin=true   //修改原始url  
+  for(let singleEle of baseUrl){  
+    result[singleEle]={  
+      target:target,  
+      changeOrigin:changeOrigin,  
+      pathRewrite:{  
+        [`^${singleEle}`]:`${singleEle}`  
+      }  
+    }  
+  }  
+  
+  return result  
+}`  
+8. 安装grunt和相关包，转换less到css  
+`npm install -g  grunt-cli`  
+      `npm install --save-dev grunt`  
+      `npm install --save-dev grunt-postcss grunt-contrib-less grunt-contrib-watch grunt-contrib-csslint`  
+9. `npm run dev`  *运行开发服务器*  
 
