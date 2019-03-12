@@ -1,5 +1,5 @@
 1. `npm install vue-cli -g`  *安装脚手架*  
-2. `vue init webpack vue_test`  *初始化项目*  
+2. `vue init webpack vue_test`  *初始化项目, install vue-router选择yes*  
 3. `npm install iview --save`  *安装iview*  
    在main.js中
    `import iView from 'iview'    
@@ -19,5 +19,22 @@
 5. `npm install axios --save`  *安装axios*  
 6. 将自定义的css文件，放入**static**目录下，然后在index.html中引入  
 `<link rel="stylesheet"  href="../static/stylesheet/common.css"></link>`  
+7. 修改config/index.js，添加一个函数，用来自动生成测试路由  
+`function generateProxyTable({baseUrl}){
+  let result={}
+  let target='http://127.0.0.1:3000' //发出的请求路由到那个路径
+  let changeOrigin=true   //修改原始url
+  for(let singleEle of baseUrl){
+    result[singleEle]={
+      target:target,
+      changeOrigin:changeOrigin,
+      pathRewrite:{
+        [`^${singleEle}`]:`${singleEle}`
+      }
+    }
+  }
+
+  return result
+}`
 7. `npm run dev`  *运行开发服务器*  
 
