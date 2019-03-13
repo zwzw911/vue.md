@@ -8,7 +8,7 @@
 4. `npm install vue-cookie --save`     *安装cookie*    
    import VueCookies from 'vue-cookies'    
    Vue.use(VueCookies)    
-4. `npm install --save-dev webpack webpack-cli`    *安装webpack以及webpack-cli*     
+4. ~~`npm install --save-dev webpack@latest webpack-cli`    *安装webpack以及webpack-cli* 使用3而不是4          
 5. `npm i element-ui -S`         *安装element ui*      
    按需应用需要安装一下package          
    `npm install babel-plugin-component -D`    
