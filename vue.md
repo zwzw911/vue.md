@@ -5,6 +5,18 @@
    `import iView from 'iview'    
    import 'iview/dist/styles/iview_own.css'    
    Vue.use(iView)`    
+4. `npm install vue-cookie --save`     *安装cookie*    
+   import VueCookies from 'vue-cookies'    
+   Vue.use(VueCookies)    
+5. `npm i element-ui -S`         *安装element ui*      
+   按需应用      
+   `npm install babel-plugin-component -D`    
+   修改.babelrc(查elementui文档)    
+   import Vue from 'vue';          
+   `import { Button, Select } from 'element-ui';`             
+   import App from './App.vue';           
+   
+   `Vue.use(Button)`            
 4. `npm install vuex --save`    *安装vuex*  
    新建文件mainState.js，在其中定义state/mutations/getter/actions  
    在main.js中执行  
@@ -20,22 +32,21 @@
 6. 将自定义的css文件，放入**static**目录下，然后在index.html中引入  
 `<link rel="stylesheet"  href="../static/stylesheet/common.css"></link>`  
 7. 修改config/index.js，添加一个函数，用来自动生成测试路由  
-`function generateProxyTable({baseUrl}){  
-  let result={}  
-  let target='http://127.0.0.1:3000' //发出的请求路由到那个路径  
-  let changeOrigin=true   //修改原始url  
-  for(let singleEle of baseUrl){  
-    result[singleEle]={  
-      target:target,  
-      changeOrigin:changeOrigin,  
-      pathRewrite:{  
-        [`^${singleEle}`]:`${singleEle}`  
-      }  
-    }  
-  }  
-  
-  return result  
-}`  
+`function generateProxyTable({baseUrl}){    
+  let result={}          
+  let target='http://127.0.0.1:3000' //发出的请求路由到那个路径            
+  let changeOrigin=true   //修改原始url           
+  for(let singleEle of baseUrl){            
+    result[singleEle]={          
+      target:target,           
+      changeOrigin:changeOrigin,         
+      pathRewrite:{          
+        [`^${singleEle}`]:`${singleEle}`            
+      }            
+    }           
+  }              
+  return result          
+}`   
 8. 安装grunt和相关包，转换less到css  
 `npm install -g  grunt-cli`  
       `npm install --save-dev grunt`  
